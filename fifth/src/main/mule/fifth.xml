@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="3c0a91a5-9440-42ef-927c-6a7f5c7d072d" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="fifthFlow" doc:id="9369b482-9560-4973-bd12-e19f15f5bdbf" >
+		<http:listener doc:name="Listener" doc:id="22a44708-23b3-4446-9fc9-6254d6c6a0be" config-ref="HTTP_Listener_config" path="/fifth"/>
+		<set-payload value='#["hi"]' doc:name="Set Payload" doc:id="66688e0c-4f1c-44ee-a236-a92b847dab3b" />
+	</flow>
+</mule>
